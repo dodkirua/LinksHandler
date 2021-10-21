@@ -8,6 +8,15 @@ class User extends Entity implements Interfaces\EntityInterface{
     private string $mail;
     private string $pass;
 
+    public function __construct(int $id = null, string $name = null, string $surname = null,
+                                string $mail = null, string $pass = null){
+        parent::__construct($id);
+        $this->setName($name)
+            ->setSurname($surname)
+            ->setMail($mail)
+            ->setPass($pass);
+    }
+
     /**
      * get the Name
      * @return string

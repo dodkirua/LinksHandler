@@ -1,5 +1,5 @@
 <?php
-namespace Dodkirua\Forum\Model\Manager;
+namespace Dodkirua\LinksHandler\Model\Manager;
 
 class Manager{
     private static ?self $manager = null;
