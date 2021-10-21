@@ -1,0 +1,18 @@
+{
+    "name": "dodkirua/links-handler",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Dodkirua\\LinksHandler\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "dodkirua",
+            "email": "pybouttefeux@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/mailer": "^5.3"
+    }
+}
