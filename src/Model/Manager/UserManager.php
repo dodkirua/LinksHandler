@@ -19,6 +19,16 @@ class UserManager extends Manager{
         return self::getOne($request);
     }
 
+    /**
+     * return a User by id
+     * @param string $mail
+     * @return User|null
+     */
+    public static function getByMail (string $mail) : ?User{
+        $request = DB::getInstance()->prepare("SELECT * FROM prefix_user where mail= :mail");
+        $request->bindValue(":mail",mb_strtolower($mail));
+        return self::getOne($request);
+    }
 
     /**
      * return an array with all the User

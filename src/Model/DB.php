@@ -13,11 +13,11 @@ class DB{
      * DbStatic constructor.
      */
     public function __construct(){
-        if (file_exists($_SERVER['DOCUMENT_ROOT'] . "/conf.local.php")){
-            require_once $_SERVER['DOCUMENT_ROOT'] . "/conf.local.php";
+        if (file_exists("../conf.local.php")){
+            require_once "../conf.local.php";
         }
         else {
-            require_once $_SERVER['DOCUMENT_ROOT'] . "/conf.php";
+            require_once "../conf.php";
         }
         /**
          * @var String $host
