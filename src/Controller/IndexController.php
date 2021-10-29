@@ -4,6 +4,7 @@ namespace Dodkirua\LinksHandler\Controller;
 
 use Dodkirua\LinksHandler\Model\Manager\LinkManager;
 use Dodkirua\LinksHandler\Model\Manager\UserManager;
+use Dodkirua\LinksHandler\Utility\Security;
 use Dodkirua\LinksHandler\Utility\Utility;
 
 class IndexController extends Controller{
@@ -22,11 +23,12 @@ class IndexController extends Controller{
      * @return int
      */
     public static function connect():int {
-        if ($_POST('mail') !== null && $_POST('pass') !== null){
-            $user = UserManager::getByMail($_POST('mail'));
-            if ($user !== null){
+        if (!is_null($_POST['mail']) && !is_null($_POST['pass'])){
+
+            $user = UserManager::getByMail(Security::sanitize($_POST['mail']));
+            if (!is_null($user)){
                 $userArray = $user->getAllData();
-                if (password_verify($userArray['pass'],$_POST('pass'))){
+                if (password_verify($_POST['pass'],$userArray['pass'])){
                     Utility::addToSession($userArray,'user');
                     return 1;
                 }

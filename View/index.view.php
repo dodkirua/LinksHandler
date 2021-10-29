@@ -16,15 +16,15 @@ else {
      */
     foreach ($var['link'] as $link){
         /* @var Link $link*/
-        $img = $link->getHref();
-        if (is_null($img)){
-            $img =  'default.jpg';
-            $name = 'default';
-        }
+        //$img = "/assets/img/link/" . $link->getUser()->getId() . $link->getName() . $link->getId();
+       // if (file_exists($img)){
+            $img =  '/assets/img/link/default.jpg';
+       // }
+        $name = $link->getName() ;
         echo "
         <div class='link'>
-            <div class='linkImg'><img src='./assets/img/link/$img' alt='$name'></div>
-            <div class='divLink'><a href='" . $link->getTarget() . "'>" . $link->getTitle() . "</a></div>
+            <div class='linkImg'><img src='$img' alt='$name'></div>
+            <div class='divLink'><a href='" . $link->getHref() . "' title='" . $link->getTitle() . "' target='" . $link->getTarget() ."' >" . $name. "</a></div>
         </div>
         ";
     }

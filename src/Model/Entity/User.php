@@ -3,10 +3,10 @@
 namespace Dodkirua\LinksHandler\Model\Entity;
 
 class User extends Entity implements Interfaces\EntityInterface{
-    private string $name;
-    private string $surname;
-    private string $mail;
-    private string $pass;
+    private ?string $name;
+    private ?string $surname;
+    private ?string $mail;
+    private ?string $pass;
 
     public function __construct(int $id = null, string $name = null, string $surname = null,
                                 string $mail = null, string $pass = null){
@@ -27,10 +27,10 @@ class User extends Entity implements Interfaces\EntityInterface{
 
     /**
      * set the Name
-     * @param string $name
+     * @param string|null $name
      * @return User
      */
-    public function setName(string $name): User    {
+    public function setName(?string $name): User    {
         $this->name = $name;
         return $this;
     }
@@ -45,10 +45,10 @@ class User extends Entity implements Interfaces\EntityInterface{
 
     /**
      * set the Surname
-     * @param string $surname
+     * @param string|null $surname
      * @return User
      */
-    public function setSurname(string $surname): User    {
+    public function setSurname(?string $surname): User    {
         $this->surname = $surname;
         return $this;
     }
@@ -63,10 +63,10 @@ class User extends Entity implements Interfaces\EntityInterface{
 
     /**
      * set the Mail
-     * @param string $mail
+     * @param string|null $mail
      * @return User
      */
-    public function setMail(string $mail): User    {
+    public function setMail(?string $mail): User    {
         $this->mail = $mail;
         return $this;
     }
@@ -81,10 +81,10 @@ class User extends Entity implements Interfaces\EntityInterface{
 
     /**
      * set the Pass
-     * @param string $pass
+     * @param string|null $pass
      * @return User
      */
-    public function setPass(string $pass): User    {
+    public function setPass(?string $pass): User    {
         $this->pass = $pass;
         return $this;
     }

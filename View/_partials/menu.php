@@ -21,14 +21,14 @@
         else {
             echo "
             <div id='form'>
-                <form action='index.php?ctrl=form&action=login'>
+                <form action='index.php?ctrl=form&action=connect' method='post'>
                     <div>
                     <label for='mail'>Mail</label>
-                    <input type='email' id='mail' required>
+                    <input type='email' id='mail' name='mail' required>
                     </div>
                     <div>
                     <label for='pass'>Password</label>
-                    <input type='password' id='pass' required>
+                    <input type='password' id='pass' required name='pass'>
                     </div>        
                     <input type='submit' value='Valider'>
                 </form>

@@ -2,13 +2,15 @@
 
 namespace Dodkirua\LinksHandler\Model\Entity;
 
+
+
 use Dodkirua\LinksHandler\Model\Entity\Interfaces\EntityInterface;
 
 class Link extends Entity implements EntityInterface {
-    private string $href;
-    private string $title;
-    private string $target;
-    private string $name;
+    private ?string $href;
+    private ?string $title;
+    private ?string $target;
+    private ?string $name;
 
     public function __construct(int $id = null, string $href = null, string $title = null,
                                 string $target = null, string $name = null)    {
@@ -30,10 +32,10 @@ class Link extends Entity implements EntityInterface {
 
     /**
      * set the Href
-     * @param string $href
+     * @param string|null $href
      * @return Link
      */
-    public function setHref(string $href): Link
+    public function setHref(?string $href): Link
     {
         $this->href = $href;
         return $this;
@@ -50,10 +52,10 @@ class Link extends Entity implements EntityInterface {
 
     /**
      * set the Title
-     * @param string $title
+     * @param string|null $title
      * @return Link
      */
-    public function setTitle(string $title): Link
+    public function setTitle(?string $title): Link
     {
         $this->title = $title;
         return $this;
@@ -70,10 +72,10 @@ class Link extends Entity implements EntityInterface {
 
     /**
      * set the Target
-     * @param string $target
+     * @param string|null $target
      * @return Link
      */
-    public function setTarget(string $target): Link
+    public function setTarget(?string $target): Link
     {
         $this->target = $target;
         return $this;
@@ -90,10 +92,10 @@ class Link extends Entity implements EntityInterface {
 
     /**
      * set the Name
-     * @param string $name
+     * @param string|null $name
      * @return Link
      */
-    public function setName(string $name): Link
+    public function setName(?string $name): Link
     {
         $this->name = $name;
         return $this;
