@@ -68,21 +68,27 @@ class LinkManager extends Manager{
 
     /**
      * insert  in DB
-     * @param string $href
-     * @param string $title
-     * @param string $target
-     * @param string $name
+     * @param array $data
      * @return bool
      */
-    public static function add(string $href, string $title, string $target, string $name) : bool {
+    public static function add(array $data) : bool {
         $request = DB::getInstance()->prepare("INSERT INTO prefix_link
         (href, title, target, name)
         VALUES (:href, :title, :target, :name)
         ");
-        $request->bindValue(":href",mb_strtolower($href));
-        $request->bindValue(":title",mb_strtolower($title));
-        $request->bindValue(":target",mb_strtolower($target));
-        $request->bindValue(":name",mb_strtolower($name));
+        if (!isset($data['href']) || !isset($data['title'])){
+            return false;
+        }
+        if (!isset($data['name'])){
+            $data['name'] = $data['title'];
+        }
+        if (!isset($data['target'])){
+            $data['target'] = '_blank';
+        }
+        $request->bindValue(":href",mb_strtolower($data['href']));
+        $request->bindValue(":title",mb_strtolower($data['title']));
+        $request->bindValue(":target",mb_strtolower($data['target']));
+        $request->bindValue(":name",mb_strtolower($data['name']));
 
         return $request->execute();
     }

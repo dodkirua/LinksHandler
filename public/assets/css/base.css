@@ -26,3 +26,9 @@ body {
 .fa-portrait {
     background-color: #d3d231;
 }
+
+#form, form , #display, #menuLog, #addLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

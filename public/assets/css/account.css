@@ -1,0 +1,18 @@
+#account, #accountHead, #accountBody, #accountId {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#account{
+    width: 80%;
+}
+
+#accountHead {
+    height: 20%;
+}
+
+#accountBody {
+    height: 80%;
+}
