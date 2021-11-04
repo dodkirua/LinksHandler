@@ -53,6 +53,9 @@ if (isset($_GET['ctrl'])){
                 case 'UserInfoMod' :
                     UserController::userInfoMod();
                     break;
+                case 'UserMailMod' :
+                    UserController::modMail();
+                    break;
                 default:
                 break;
             }

@@ -1,5 +1,5 @@
 <div id="userInfoMod">
-    <form action="index.php?ctrl=UserInfoMod" method="post">
+    <form action="index.php?ctrl=form&action=UserInfoMod" method="post">
         <div id="nameDiv">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" value="<?=$_SESSION['user']['name'] ?>">
@@ -14,7 +14,7 @@
     </form>
 </div>
 <div id="userMailMod">
-    <form action="index.php?ctrl=UserMailMod" method="post">
+    <form action="index.php?ctrl=form&action=UserMailMod" method="post">
         <div id="mailDiv">
             <label for="mail">Mail :</label>
             <input type="text" id="mail" name="mail" value="<?=$_SESSION['user']['mail'] ?>">
