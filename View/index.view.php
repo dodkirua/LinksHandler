@@ -3,7 +3,7 @@
 use Dodkirua\LinksHandler\Model\Entity\Link;
 
 
-if (is_null($_SESSION['user'])){
+if (isset($_SESSION['user']) && !is_null($_SESSION['user'])){
     echo "
     <div>
     Veuillez vous connecter.

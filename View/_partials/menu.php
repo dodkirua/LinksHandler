@@ -1,26 +1,28 @@
 <div id="menu">
 
     <?php
-        if (!is_null($_SESSION['user'])){
-            echo "        
-            <div id='menuLog'>
-                <a href='index.php?ctrl=addLink'>
-                    <div id='addLink'>
+        if (isset($_SESSION['user']) && !is_null($_SESSION['user'])){
+            echo " 
+                <div id='menuLink'> 
+                    <a href='index.php?ctrl=addLink'>                    
                         <i class='fas fa-plus-square'></i>
-                        <p>Ajouter un lien</p>
-                    </div>
-                    <div>
-                        <a href='index.php?ctrl=account'>
-                        <i class='fas fa-portrait'></i>
-                        </a>
-                    </div>
-                </a>
+                        <p>Ajouter un lien</p>                    
+                    </a>
                 </div>
+                <div id='menuAccount'>             
+                    <a href='index.php?ctrl=account'>
+                        <i class='fas fa-portrait'></i>
+                    </a>
+                       
+                    <a href='index.php?ctrl=form&action=disconnect'>
+                        <i class='far fa-times-circle'></i>
+                    </a>
+                </div>                       
             ";
         }
         else {
             echo "
-            <div id='form'>
+            <div id='formConnect'>
                 <form action='index.php?ctrl=form&action=connect' method='post'>
                     <div>
                     <label for='mail'>Mail</label>

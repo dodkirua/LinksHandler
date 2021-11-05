@@ -11,14 +11,18 @@ body {
 }
 
 #menu{
+    height: 10%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+#menu, #menuAccount, #menuLink {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 10%;
 }
 
-.fa-plus-square, .fa-portrait {
+.fa-plus-square, .fa-portrait, .fa-times-circle {
     color: purple;
     font-size: 2rem;
 }
@@ -27,8 +31,39 @@ body {
     background-color: #d3d231;
 }
 
-#form, form , #display, #menuLog, #addLink{
+#formConnect {
+    width: 100%;
+}
+
+#formConnect > form , #display, #menu a, form >div{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+#formConnect > form {
+    justify-content: flex-end;
+}
+
+#formConnect > form > div, #formConnect > form > div > *{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#menuLog{
+    width: 100%;
+}
+
+#menuLink{
+    width: 90%;
+}
+
+#menuAccount{
+    width: 7%;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
 }

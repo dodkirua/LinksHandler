@@ -68,7 +68,7 @@ class UserController extends Controller{
      * -3 password not enough strong
      * -5 $_POST problem
      * -6 wrong old password
-     * -7 DB udpdate problem
+     * -7 DB update problem
      * -16 pass and verif pass is different
      * -17 old pass and new pass is equals
      * @return int

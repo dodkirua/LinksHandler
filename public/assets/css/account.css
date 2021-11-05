@@ -1,8 +1,22 @@
-#account, #accountHead, #accountBody, #accountId {
-    display: flex;
-    flex-direction: column;
+#display {
     justify-content: center;
+}
 
+#accountId >div {
+    margin: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#accountId, #accountId > div, #accountHead {
+    display: flex;
+
+}
+
+#accountId {
+    flex-direction: column;
+    align-items: end;
+    width: 30%;
 }
 
 #account{
@@ -11,6 +25,7 @@
 
 #accountHead {
     height: 20%;
+    justify-content: center;
 }
 
 #accountBody {

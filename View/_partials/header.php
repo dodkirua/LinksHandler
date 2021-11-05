@@ -22,4 +22,3 @@
 <body>
 
 <div id="container">
-    <div id="principal">

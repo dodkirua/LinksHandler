@@ -48,13 +48,16 @@ if (isset($_GET['ctrl'])){
                     IndexController::display();
                     break;
                 case 'passwordMod' :
-                    UserController::passwordMod();
+                    $error = UserController::passwordMod();
+                    AccountController::display('passMod','Modifications du password',$error);
                     break;
                 case 'UserInfoMod' :
-                    UserController::userInfoMod();
+                    $error = UserController::userInfoMod();
+                    AccountController::display('modUserInfo', 'Modification des informations',$error);
                     break;
                 case 'UserMailMod' :
-                    UserController::modMail();
+                    $error = UserController::modMail();
+                    AccountController::display('modUserInfo', 'Modification des informations',$error);
                     break;
                 default:
                 break;
