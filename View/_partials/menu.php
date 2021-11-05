@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="menu" class="borderRed">
 
     <?php
         if (isset($_SESSION['user']) && !is_null($_SESSION['user'])){

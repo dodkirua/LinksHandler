@@ -4,11 +4,14 @@
 
 #accountId >div {
     margin: 1rem;
-    flex-direction: row;
     justify-content: space-between;
 }
 
-#accountId, #accountId > div, #accountHead {
+.form, #accountId >div {
+    width: 100%;
+}
+
+#accountId, #accountId > div, #accountHead, .form, .space-between, .flex-end {
     display: flex;
 
 }
@@ -31,3 +34,16 @@
 #accountBody {
     height: 80%;
 }
+
+#passChg , #userMod{
+    width: 40%;
+}
+
+.space-between, .flex-end, #accountId >div{
+    flex-direction: row;
+}
+
+.flex-end, .form {
+    justify-content: flex-end;
+}
+

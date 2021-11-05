@@ -4,7 +4,6 @@
     align-items: self-end;
 }
 #addLink > form > div {
-    margin: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,4 +14,8 @@
 #display {
     justify-content: center;
     padding: 2rem;
+}
+
+#addLink {
+    width: 40%;
 }

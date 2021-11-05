@@ -18,10 +18,10 @@ if (isset($_GET['ctrl'])){
             AccountController::display();
             break;
         case 'UserInfoMod' :
-            AccountController::display('modUserInfo', 'Modification des informations');
+            AccountController::display('UserInfoMod', 'Modification des informations');
             break;
         case 'passwordMod' :
-            AccountController::display('passMod','Modifications du password');
+            AccountController::display('passwordMod','Modifications du password');
             break;
         case 'form':
             switch ($_GET['action']){
