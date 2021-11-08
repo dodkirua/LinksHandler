@@ -4,6 +4,9 @@
         if (isset($_SESSION['user']) && !is_null($_SESSION['user'])){
             echo " 
                 <div id='menuLink'> 
+                    <a href='index.php'>
+                    <p>Accueil</p>
+                    </a>
                     <a href='index.php?ctrl=addLink'>                    
                         <i class='fas fa-plus-square'></i>
                         <p>Ajouter un lien</p>                    

@@ -18,8 +18,11 @@ body {
 #menu, #menuAccount, #menuLink {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+}
+
+#menu, #menuAccount{
+    justify-content: space-between;
 }
 
 .fa-plus-square, .fa-portrait, .fa-times-circle {
@@ -56,6 +59,17 @@ body {
 
 #menuLink{
     width: 90%;
+}
+
+#menuLink a{
+    margin-left: 1rem;
+    border-right: solid 1px blue;
+    padding-right: 0.5rem;
+    height: 90%;
+}
+
+#menuLink a :hover{
+    background-color: cornsilk;
 }
 
 #menuAccount{
