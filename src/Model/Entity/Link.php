@@ -11,14 +11,18 @@ class Link extends Entity implements EntityInterface {
     private ?string $title;
     private ?string $target;
     private ?string $name;
+    private ?User $user;
+
+
 
     public function __construct(int $id = null, string $href = null, string $title = null,
-                                string $target = null, string $name = null)    {
+                                string $target = null, string $name = null, User $user = null)    {
         parent::__construct($id);
         $this->setHref($href)
             ->setTitle($title)
             ->setTarget($target)
-            ->setName($name);
+            ->setName($name)
+            ->$this->setUser($user);
     }
 
     /**
@@ -102,6 +106,24 @@ class Link extends Entity implements EntityInterface {
     }
 
     /**
+     * get user
+     * @return User|null
+     */
+    public function getUser(): ?User    {
+        return $this->user;
+    }
+
+    /**
+     * set User
+     * @param User|null $user
+     * @return Link
+     */
+    public function setUser(?User $user): Link    {
+        $this->user = $user;
+        return $this;
+    }
+
+    /**
      * return all data in array
      * @return array
      */
@@ -111,6 +133,7 @@ class Link extends Entity implements EntityInterface {
         $array['title'] = $this->getTitle();
         $array['target'] = $this->getTarget();
         $array['name'] = $this->getName();
+        $array['user'] = $this->getUser()->getAllData();
         return $array;
     }
 }

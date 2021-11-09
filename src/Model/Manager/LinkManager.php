@@ -51,10 +51,13 @@ class LinkManager extends Manager{
             if (is_null($var['target']) ) {
                 $var['target'] = $data->getTarget();
             }
+            if (is_null($var['user_id']) ) {
+                $var['user_id'] = $data->getUser()->getId();
+            }
         }
 
         $request = DB::getInstance()->prepare("UPDATE prefix_link
-                    SET href = :href, title = :title, target = :tgt , name = :name
+                    SET href = :href, title = :title, target = :tgt , name = :name , user_id = :user
                     WHERE id = :id
                     ");
         $request->bindValue(":id",$id);
@@ -62,6 +65,7 @@ class LinkManager extends Manager{
         $request->bindValue(":title",mb_strtolower($var['title']));
         $request->bindValue(":tgt",mb_strtolower($var['target']));
         $request->bindValue(":name",mb_strtolower($var['name']));
+        $request->bindValue(":user",intval($var['user_id']));
 
         return $request->execute();
     }
@@ -73,14 +77,17 @@ class LinkManager extends Manager{
      */
     public static function add(array $data) : bool {
         $request = DB::getInstance()->prepare("INSERT INTO prefix_link
-        (href, title, target, name)
-        VALUES (:href, :title, :target, :name)
+        (href, title, target, name, user_id)
+        VALUES (:href, :title, :target, :name, :user)
         ");
         if (!isset($data['href']) || !isset($data['title'])){
             return false;
         }
         if (!isset($data['name'])){
             $data['name'] = $data['title'];
+        }
+        if (!isset($data['target'])){
+            $data['target'] = '_blank';
         }
         if (!isset($data['target'])){
             $data['target'] = '_blank';
