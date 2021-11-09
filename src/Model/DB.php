@@ -16,7 +16,10 @@ class DB{
         if (file_exists("../conf.local.php")){
             require_once "../conf.local.php";
         }
-        else {
+        elseif (file_exists("../conf.dev.php")) {
+             require_once "../conf.dev.php";
+        }
+            else {
             require_once "../conf.php";
         }
         /**

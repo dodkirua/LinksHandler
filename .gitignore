@@ -2,3 +2,5 @@
 /public/test.php
 /public/node_modules/
 /.idea/
+/conf.php
+/conf.dev.php
